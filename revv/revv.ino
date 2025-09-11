@@ -1,7 +1,7 @@
 #include <RH_ASK.h>
 #include <SPI.h>
 
-RH_ASK driver(2000, 11, 12); // bitrate, rxPin, txPin (txPin unused here)
+RH_ASK driver(2000, 11, 12);
 bool rhOk = false;
 unsigned long lastRetry = 0;
 
@@ -26,7 +26,6 @@ void setup() {
 
 void loop() {
   if (!rhOk) {
-    // blink builtin LED to indicate init failure, and retry periodically
     static unsigned long blinkT = 0;
     static bool ledState = false;
     if (millis() - blinkT > 500) {
@@ -48,7 +47,6 @@ void loop() {
     return;
   }
 
-  // Normal receive loop
   uint8_t buf[RH_ASK_MAX_MESSAGE_LEN];
   uint8_t buflen = sizeof(buf);
   if (driver.recv(buf, &buflen)) {

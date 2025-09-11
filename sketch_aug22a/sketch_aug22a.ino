@@ -7,8 +7,8 @@ bool btn_zero_state = false;
 const int BTN_ONE = 10;
 bool btn_one_state = false;
 const int BTN_PRESS_INDICATOR = 11;
-char password[6] = ""; // change if needed
-const char* correctPassword = "10101"; // change if needed
+char password[6] = "";
+const char* correctPassword = "10101";
 enum ProgramState { IDLE, ARMED, ENDED };
 ProgramState currentState = IDLE;
 const int DEBOUNCE_DELAY = 200;
@@ -31,7 +31,7 @@ const byte digitPatterns[10] = {
 
 int countdownSeconds = 30;
 unsigned long previousMillis = 0;
-const long interval = 1000;
+const long interval = 1000; // 1 second
 
 void setup() {
   Serial.begin(9600);

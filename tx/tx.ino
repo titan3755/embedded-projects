@@ -1,7 +1,6 @@
 #include <RH_ASK.h>
 #include <SPI.h>
 
-// Only TX (D12). RX pin is defined but unused.
 RH_ASK driver(2000, 11, 12);  // (bitrate, rxPin, txPin)
 
 void setup() {

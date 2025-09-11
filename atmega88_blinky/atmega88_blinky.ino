@@ -1,4 +1,4 @@
-#define LED_PIN 8  // PB0 = digital pin 8 in MiniCore mapping
+#define LED_PIN 8
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);
